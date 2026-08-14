@@ -1,0 +1,93 @@
+{
+  "mappings": [
+    {
+      "adminMsgId": 13,
+      "mapping": {
+        "userChatId": 8464815978,
+        "userMessageId": 11,
+        "userName": ".",
+        "userHandle": "ShaxruzAbduxalilov",
+        "timestamp": 1786698953077,
+        "adminMessageId": 13
+      }
+    },
+    {
+      "adminMsgId": 12,
+      "mapping": {
+        "userChatId": 8464815978,
+        "userMessageId": 11,
+        "userName": ".",
+        "userHandle": "ShaxruzAbduxalilov",
+        "timestamp": 1786698953080,
+        "adminMessageId": 12
+      }
+    },
+    {
+      "adminMsgId": 29,
+      "mapping": {
+        "userChatId": 5232425248,
+        "userMessageId": 27,
+        "userName": "𝙼𝚊𝚟𝚎𝚛𝚒𝚌𝚔",
+        "userHandle": "realahmadjon",
+        "timestamp": 1786700483562,
+        "adminMessageId": 29
+      }
+    },
+    {
+      "adminMsgId": 28,
+      "mapping": {
+        "userChatId": 5232425248,
+        "userMessageId": 27,
+        "userName": "𝙼𝚊𝚟𝚎𝚛𝚒𝚌𝚔",
+        "userHandle": "realahmadjon",
+        "timestamp": 1786700483563,
+        "adminMessageId": 28
+      }
+    },
+    {
+      "adminMsgId": 46,
+      "mapping": {
+        "userChatId": 5232425248,
+        "userMessageId": 44,
+        "userName": "𝙼𝚊𝚟𝚎𝚛𝚒𝚌𝚔",
+        "userHandle": "realahmadjon",
+        "timestamp": 1786700547202,
+        "adminMessageId": 46
+      }
+    },
+    {
+      "adminMsgId": 45,
+      "mapping": {
+        "userChatId": 5232425248,
+        "userMessageId": 44,
+        "userName": "𝙼𝚊𝚟𝚎𝚛𝚒𝚌𝚔",
+        "userHandle": "realahmadjon",
+        "timestamp": 1786700547203,
+        "adminMessageId": 45
+      }
+    },
+    {
+      "adminMsgId": 68,
+      "mapping": {
+        "userChatId": 8464815978,
+        "userMessageId": 66,
+        "userName": ".",
+        "userHandle": "ShaxruzAbduxalilov",
+        "timestamp": 1786701311956,
+        "adminMessageId": 68
+      }
+    },
+    {
+      "adminMsgId": 67,
+      "mapping": {
+        "userChatId": 8464815978,
+        "userMessageId": 66,
+        "userName": ".",
+        "userHandle": "ShaxruzAbduxalilov",
+        "timestamp": 1786701311958,
+        "adminMessageId": 67
+      }
+    }
+  ],
+  "updatedAt": "2026-08-14T09:55:11.958Z"
+}

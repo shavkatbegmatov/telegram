@@ -1,0 +1,31 @@
+{
+  "name": "kaizen-support-telegram-bot",
+  "version": "1.0.0",
+  "description": "Telegram Support Bot for forwarding user messages to admins and delivering admin replies",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "validate": "tsx src/scripts/validate-config.ts"
+  },
+  "keywords": [
+    "telegram",
+    "bot",
+    "support",
+    "grammy",
+    "helpdesk"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "grammy": "^1.35.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.5.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.5.4"
+  }
+}
