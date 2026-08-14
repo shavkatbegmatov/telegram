@@ -1,0 +1,17 @@
+services:
+  - type: worker
+    name: kaizen-telegram-support-bot
+    env: node
+    region: singapore # Options: singapore, oregon, frankfurt, ohio
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: ADMIN_CHAT_ID
+        sync: false
+      - key: WELCOME_MESSAGE
+        value: "👋 Welcome to Support! Send us any question, feedback, or request and our team will get back to you shortly."
+      - key: AUTO_REPLY_MESSAGE
+        value: "✅ Your message has been received by our support team! We will reply to you as soon as possible."

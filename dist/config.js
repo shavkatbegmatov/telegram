@@ -10,9 +10,11 @@ dotenv_1.default.config();
 const envSchema = zod_1.z.object({
     BOT_TOKEN: zod_1.z.string().min(1, "BOT_TOKEN is required"),
     ADMIN_CHAT_ID: zod_1.z.string().min(1, "ADMIN_CHAT_ID is required"),
+    SUPABASE_URL: zod_1.z.string().url("SUPABASE_URL must be a valid URL").optional(),
+    SUPABASE_SERVICE_ROLE_KEY: zod_1.z.string().optional(),
     WELCOME_MESSAGE: zod_1.z
         .string()
-        .default("👋 Welcome to Support! Send us any question, feedback, or request and our team will get back to you shortly."),
+        .default("👋 Welcome to Kaizen Support & Task Companion! Connect your account to manage tasks, log habits, and receive deadline reminders."),
     AUTO_REPLY_MESSAGE: zod_1.z
         .string()
         .default("✅ Your message has been received by our support team! We will reply to you as soon as possible."),
@@ -30,5 +32,7 @@ function loadConfig() {
     return {
         ...result.data,
         adminChatIdNumber: Number(result.data.ADMIN_CHAT_ID),
+        supabaseUrl: result.data.SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL || "",
+        supabaseServiceKey: result.data.SUPABASE_SERVICE_ROLE_KEY || process.env.SUPABASE_SERVICE_ROLE_KEY || "",
     };
 }

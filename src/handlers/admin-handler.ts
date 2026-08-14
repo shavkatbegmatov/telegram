@@ -10,7 +10,6 @@ export function setupAdminHandler(config: Config, ticketStore: TicketStore) {
   const composer = new Composer()
 
   composer.on("message", async (ctx) => {
-    // Only process messages inside the configured admin chat
     if (ctx.chat.id !== config.adminChatIdNumber) {
       return
     }
@@ -22,21 +21,18 @@ export function setupAdminHandler(config: Config, ticketStore: TicketStore) {
 
       if (ticket) {
         try {
-          // Send notification prefix to user
           await ctx.api.sendMessage(
             ticket.userChatId,
             `💬 <b>Support Team Reply:</b>`,
             { parse_mode: "HTML" }
           )
 
-          // Copy admin's exact content (supports text, images, files, audio, etc.)
           await ctx.api.copyMessage(
             ticket.userChatId,
             ctx.chat.id,
             ctx.message.message_id
           )
 
-          // Confirm in admin chat using safe HTML
           await ctx.reply(
             `✅ Reply delivered to <b>${escapeHtml(ticket.userName)}</b> (<code>${ticket.userChatId}</code>)`,
             { parse_mode: "HTML", reply_parameters: { message_id: ctx.message.message_id } }
@@ -59,7 +55,6 @@ export function setupAdminHandler(config: Config, ticketStore: TicketStore) {
       }
     }
 
-    // If admin posts a non-command message without replying to anything
     if (ctx.message.text && !ctx.message.text.startsWith("/")) {
       await ctx.reply(
         `💡 <b>Tip:</b> Reply directly to a forwarded user message to send them an answer, or use <code>/reply &lt;user_id&gt; &lt;text&gt;</code>.`,

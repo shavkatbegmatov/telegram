@@ -6,10 +6,12 @@ dotenv.config()
 const envSchema = z.object({
   BOT_TOKEN: z.string().min(1, "BOT_TOKEN is required"),
   ADMIN_CHAT_ID: z.string().min(1, "ADMIN_CHAT_ID is required"),
+  SUPABASE_URL: z.string().url("SUPABASE_URL must be a valid URL").optional(),
+  SUPABASE_SERVICE_ROLE_KEY: z.string().optional(),
   WELCOME_MESSAGE: z
     .string()
     .default(
-      "👋 Welcome to Support! Send us any question, feedback, or request and our team will get back to you shortly."
+      "👋 Welcome to Kaizen Support & Task Companion! Connect your account to manage tasks, log habits, and receive deadline reminders."
     ),
   AUTO_REPLY_MESSAGE: z
     .string()
@@ -35,6 +37,8 @@ export function loadConfig() {
   return {
     ...result.data,
     adminChatIdNumber: Number(result.data.ADMIN_CHAT_ID),
+    supabaseUrl: result.data.SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL || "",
+    supabaseServiceKey: result.data.SUPABASE_SERVICE_ROLE_KEY || process.env.SUPABASE_SERVICE_ROLE_KEY || "",
   }
 }
 
